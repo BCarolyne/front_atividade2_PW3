@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+
+	<body>
+
+		<div class="container">
+
+			<div class="card">
+				<div class="card-header">LISTAGEM medico</div>
+			</div>
+			
+			<% medicos.forEach(medico=>{ %>
+				<div class="card mt-2">
+					<div class="card-body">
+						<%= medico.nome_medico %>
+					</div>
+
+					<a href="/editarmedicos/<%= medico.id %>" class="btn btn-success">EDITAR</a>
+					<a href="/excluirmedico/<%= medico.id %>" class="btn btn-danger mt-1">EXCLUIR</a>
+
+				</div>
+
+			<%  }); %>
+
+		</div>
+
+	</body>
+
+	<%- include('../partials/footer.ejs') %>
+
+</html>

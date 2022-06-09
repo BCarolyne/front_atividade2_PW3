@@ -1,0 +1,80 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>CADASTRO DE MÉDICO </h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="http://localhost:3000/medico/cadastrarmedico" 
+                method="post">
+
+                    
+
+
+
+
+                    <label for="nome_medico"></label>
+                    <input class="form-control" type="text" 
+                    name="nome_medico" id="nome_medico"
+                    placeholder="NOME DO MEDICO">
+
+                    <label for="email_medico"></label>
+                    <input class="form-control" type="text" 
+                    name="email_medico" id="email_medico"
+                    placeholder="EMAIL DO MEDICO">
+
+
+                    <label for="telefone_medico"></label>
+                    <input class="form-control" type="text" 
+                    name="telefone_medico" id="telefone_medico"
+                    placeholder="TELEFONE DO MEDICO">
+
+
+                    <label for="celular_medico"></label>
+                    <input class="form-control" type="text" 
+                    name="celular_medico" id="celular_medico"
+                    placeholder="CELULAR DO MEDICO"><br/>
+
+                    
+                    <div>  
+                        <h6>SELECIONE  A ESPECIALIDADE </h6>
+
+                        <% especialidades.forEach(especialidade=>{ %>
+
+                            <div class="card mt-2" cent>
+                                
+                                <input href= "<%= especialidade.id %>" 
+                                    class="form-check-input" type="checkbox" 
+                                    name="tblEspecialidadeId" id="tblEspecialidadeId" 
+                                    value="<%= especialidade.id %>"
+                                />
+                                <label for="tblEspecialidadeId"><%= especialidade.nome_especialidade %></label>
+                            
+                            </div>
+            
+                        <%  }); %>
+                    </div><br/>
+
+
+                    <button class="btn btn-success mt-2">CADASTRAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>
